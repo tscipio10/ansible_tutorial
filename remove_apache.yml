@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  
+  - name: update repository
+    yum:
+      update_cache: yes
+
+  - name: install httpd package
+    yum:
+      name: httpd
+      state: absent	
+  - name: add php support for apache
+    yum: 
+      name: php-xmlseclibs.noarch
+      state: absent
+
+
