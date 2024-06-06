@@ -6,14 +6,17 @@
   - name: update repository
     yum:
       update_cache: yes
+    
 
   - name: install httpd package
     yum:
       name: httpd
       state: latest	
+    
+
   - name: add php support for apache
     yum: 
       name: php-xmlseclibs.noarch
       state: latest
-
+    
 
